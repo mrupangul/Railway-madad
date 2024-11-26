@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7c3aed; /* Violet background color */
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 10px; /* Center the image */
+            width: 10%; /* Set image width to 10% of the page width */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .department-box {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        h3 {
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e7f3ff;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .complaint-item {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Complaint Categorization Results</h1>
+    <h2>Complaints by Department</h2>
+    {% for department, complaints in department_complaints.items() %}
+    <div class="department-box">
+        <h3>{{ department }}</h3>
+        {% if complaints %}
+        <ul>
+            {% for complaint in complaints|sort(attribute='0') %}
+            <li>
+                <div class="complaint-item">
+                    <p><strong>ID:</strong> {{ complaint[0] }}</p>
+                    <p><strong>Complaint:</strong> {{ complaint[1] }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No complaints detected.</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html> 

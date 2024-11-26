@@ -1,0 +1,13 @@
+train: C:/Users/avant/PycharmProjects/ml/cat.v1i.yolov5pytorch/train/images
+val: C:/Users/avant/PycharmProjects/ml/cat.v1i.yolov5pytorch/valid/images
+test: C:/Users/avant/PycharmProjects/ml/cat.v1i.yolov5pytorch/test/images
+
+nc: 19  # Number of classes
+names: ['Air_Conditioner', 'Alcohol_Narcotics', 'Broken_Window_Seat', 'Charging_Points', 'Cockroach_Rodents', 'DirtyTorn', 'Eve-teasing_Misbehavior_Rape', 'Fan', 'Harassment_Extortion', 'Interior_Cleanliness', 'Lights', 'Medical_Assistance', 'Nuisance_Hawkers_Beggars', 'Smoking_Drinking', 'Tap_Leaking', 'Theft_Snatching', 'Toilet', 'Unauthorized_Person_in_Ladies', 'Washbasin']
+
+roboflow:
+  workspace: train-complaints
+  project: cat-8ynjq
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/train-complaints/cat-8ynjq/dataset/1
